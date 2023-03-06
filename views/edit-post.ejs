@@ -1,0 +1,8 @@
+<%-include('./partials/head.ejs') %> 
+<form action="/save-post/<%=found._id %> " method="POST" class="py-20 grid gap-4 w-1/4 text-center mx-auto" >
+      <h1 class="text ">New Post</h1>
+      <input placeholder="title" value="<%= found.title %> "  title="title" name="title" type="text" class="text border rounded-full  px-4 py-1">
+      <input placeholder="More"  value="<%= found.more %> " title="more" name="more" type="text" class="text border rounded-full  px-4 py-1">
+      <button class="text-white text-2xl bg-green-500 px-4 py-1 text-center">Submit</button>
+</form>
+<%-include('./partials/footer.ejs')%> 

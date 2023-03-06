@@ -1,0 +1,44 @@
+<%-include('./partials/head.ejs') %> 
+<div class="text bg-red-400">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero quasi rerum repellendus quas tenetur omnis. Repudiandae dicta sunt distinctio aspernatur explicabo aliquam, ipsam sequi placeat. Dolorum porro id nemo expedita.
+
+</div>
+      <%=myName %> 
+      <table class="text table-seperate border" align="center">
+            <thead class="text">
+                  <tr class="text bg-slate-100">
+                        <th class="text border border-slate-300 px-10 py-4">Name</th>
+                        <th class="text  border border-slate-300 px-10 py-4">Depertment</th>
+                        <th class="text  border border-slate-300 px-10 py-4">School</th>
+                  </tr>
+            </thead>
+            <% users.map((val, index) =>{%>
+                        <tbody class="text">
+                              <tr class="text hover:bg-slate-200">
+                                    <td class="text  border border-slate-200 px-10 py-4"><%= val.name %></td>
+                                    <td class="text  border border-slate-300 px-10 py-4"><%= val.dep %></td>
+                                    <td class="text  border border-slate-300 px-10 py-4"><%= val.school %> </td>
+                              </tr>
+                        </tbody>
+                  <%}) %> 
+            </table>
+            <table class="text table-seperate border" align="center">
+                  <h1 class="text">Second Method</h1>
+                  <thead class="text">
+                        <tr class="text bg-slate-100">
+                              <th class="text border border-slate-300 px-10 py-4">Name</th>
+                              <th class="text  border border-slate-300 px-10 py-4">Depertment</th>
+                              <th class="text  border border-slate-300 px-10 py-4">School</th>
+                        </tr>
+                  </thead>
+           <% users.forEach(each => { %>
+            <tbody class="text">
+                  <tr class="text hover:bg-slate-200">
+                        <td class="text  border border-slate-200 px-10 py-4"><%= each.name %> </td>
+                        <td class="text  border border-slate-300 px-10 py-4"><%= each.dep %></td>
+                        <td class="text  border border-slate-300 px-10 py-4"><%= each.school %></td>
+                  </tr>
+            </tbody>
+           <% }) %>
+      </table>
+<%-include('./partials/footer.ejs')%> 

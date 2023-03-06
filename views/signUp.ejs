@@ -1,0 +1,18 @@
+<%-include('./partials/head.ejs') %> 
+<div class="text bg-pink-400 w-full h-screen">
+      <h1 class="text-center text-3xl bg-pink-500 text-white  py-3 font-bold font-mono">Sign Up Page</h1>
+      <div class="text-center grid items-center px-8 lg:px-0">
+            <div class=" mt-40 bg-green-500 text-white w-full md:w-1/2 lg:w-1/4 mx-auto text-4xl"><%= message %> </div>
+            <form action="/signUp" method="POST" class="grid mt-5 w-full md:w-1/2 lg:w-1/4 mx-auto bg-slate-300 p-10">
+                  <h1 class=" font-bold font-mono text-2xl"> </h1>
+                  <input type="text" class="text bg-slate-50 w-full my-5 py-3 px-5 rounded-full " name="surName" placeholder="Surname">
+                  <input type="text" class="text bg-slate-50 w-full my-5 py-3 px-5 rounded-full " name="lastName" placeholder="Last Name">
+                  <input type="password" class="text bg-slate-50 w-full my-5 py-3 px-5 rounded-full " name="password" placeholder="Password">
+                  <input type="email" class="text bg-slate-50 w-full my-5 py-3 px-5 rounded-full " name="email" placeholder="E-mail">
+                  <div class="text flex justify-end">
+                        <button class="text-center bg-blue-500 py-2 w-1/2 text-white text-xl font-mono font-bold hover:bg-blue-700 hover:scale-105">Submit</button>
+                  </div>
+            </form>
+      </div>
+</div>
+<%-include('./partials/footer.ejs')%> 

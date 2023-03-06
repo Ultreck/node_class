@@ -1,0 +1,39 @@
+<%- include("../views/partials/head.ejs") %> 
+<table class="text  border-collapse border border-slate-40 mt-20" align="center">
+      <thead class="text">
+            <tr>
+                  <th class="ext-lg border border-slate-300 bg-slate-200 px-10 py-2">S/N</th>
+                  <th class="ext-lg border border-slate-300 bg-slate-200 px-10 py-2">Title</th>
+                  <th class="ext-lg border border-slate-300 bg-slate-200 px-10 py-2">More</th>
+                  <th class="ext-lg border border-slate-300 bg-slate-200 px-10 py-2">Time</th>
+                  <th class="ext-lg border border-slate-300 bg-slate-200 px-10 py-2">Actions</th>
+            </tr>
+      </thead>
+      <tbody class="text">
+      <% userData.map(({title, more, time,  _id}, index) => { %>
+            <tr class="text text bg-slate-50">
+                  <form action="/new-post/profiles/<%= index %> " method="POST" class="text hover:bg-slate-200">
+                        <td class="text-lg border border-slate-300 ">
+                              <button class="text px-10 py-2"><%= index + 1 %></button>
+                        </td>
+                        <td class="text-lg border border-slate-300 ">
+                              <button class="text px-10 py-2"><%= title %></button>
+                        </td>
+                        <td class="text-lg border border-slate-300 ">
+                              <button class="text px-10 py-2"><%= more %></button>
+                        </td>
+                        <td class="text-lg border border-slate-300 ">
+                              <button class="text px-10 py-2"><%= time %></button>
+                        </td>
+                  </form>
+                  <td class="text-lg border border-slate-300 px-10 py-2  flex">
+                                    <a href="/edit-post/<%= _id %>" class="mx-1 hover:bg-yellow-600 bg-yellow-400 px-4 py-1 rounded hover:text-white md:text-xl font-mono font-bold hover:scale-105">Edit</a>
+                              <form action="/delete-post/<%= _id %> " method="POST" class="text">
+                                    <button class="mx-1 hover:bg-red-700 bg-red-500 px-4 py-1 rounded text-white md:text-xl font-mono font-bold hover:scale-105">Delete</button>
+                              </form>
+                        </td>
+                  </tr>
+            <% }) %> 
+      </tbody>
+</table>
+<%- include("../views/partials/footer.ejs") %> 

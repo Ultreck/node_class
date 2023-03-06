@@ -1,0 +1,37 @@
+<%-include('./partials/head.ejs') %> 
+<div class="text bg-fuchsia-400 w-full h-screen">
+      <h1 class="text-center text-3xl bg-fuchsia-500 text-white  py-3 font-bold font-mono">Sign Up Page</h1>
+            <table class="text border-collapse border border-slate-40 mt-20" align="center">
+                  <thead class="text">
+                        <tr class="text">
+                              <th class="text-lg border border-slate-300 bg-slate-200 px-10 py-2">S/N</th>
+                              <th class="text-lg border border-slate-300 bg-slate-200 px-10 py-2">SurName</th>
+                              <th class="text-lg border border-slate-300 bg-slate-200 px-10 py-2">Last Name</th>
+                              <th class="text-lg border border-slate-300 bg-slate-200 px-10 py-2">E-mail</th>
+                              <th class="text-lg border border-slate-300 bg-slate-200 px-10 py-2">Actions</th>
+                        </tr>
+                  </thead>
+                  <% allArrData.map((val, index) => { %>
+                        <tbody class="text">
+                        <tr class="text bg-slate-50 hover:bg-slate-100">
+                              <td class="text-lg border border-slate-300 px-10 py-2"><%= index+1 %> </td>
+                              <td class="text-lg border border-slate-300 px-10 py-2"><%= val.surName %> </td>
+                              <td class="text-lg border border-slate-300 px-10 py-2"><%= val.lastName %> </td>
+                              <td class="text-lg border border-slate-300 px-10 py-2"><%= val.email %> </td>
+                              <td class="text-lg border border-slate-300 p-2 flex">
+                                    <form action="/edit" method="post" class="text">
+                                          <input type="hidden" class="text" value="<%= index %> " name="index">
+                                          <button class="mx-1 hover:bg-yellow-600 bg-yellow-400 px-4 py-1 rounded hover:text-white md:text-xl font-mono font-bold hover:scale-105">Edit</button>
+                                    </form>
+                                    <form action="/delete" method="post" class="text">
+                                          <input type="hidden" class="text"  value="<%= index %> " name="index">
+                                          <button class="mx-1 hover:bg-red-700 bg-red-500 px-4 py-1 rounded text-white md:text-xl font-mono font-bold hover:scale-105">Delete</button>
+                                    </form>
+                              </td>
+                        </tr>
+                  </tbody>
+                  
+                  <% }) %>
+            </table>
+      </div>
+      <%-include('./partials/footer.ejs')%> 
